@@ -4,6 +4,7 @@ downloadsFolder = "/Users/marge/Downloads/"
 pictureFolder = "/User/marge/Pictures/"
 VideoFolder = "/User/marge/Videos/"
 documentFolder = "/Users/marge/Documents/ArchivosZIP/"
+LibrosPDF = "/Users/marge/Documents/LibrosPDF/"
 
 
 if __name__=="__main__":
@@ -26,4 +27,8 @@ if __name__=="__main__":
         
         if extension in [".zip"]:  #Reubica archivos .zip
             documentFolder = "/Users/marge/Documents/ArchivosZIP/"
+            os.rename(downloadsFolder + filename, documentFolder + filename)
+        
+        if extension in [".pdf"]:  #Reubica archivos .pdf
+            documentFolder = "/Users/marge/Documents/LibrosPDF/"
             os.rename(downloadsFolder + filename, documentFolder + filename)
